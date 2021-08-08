@@ -44,7 +44,7 @@ print (C + "Copying ssh keys and files\nGet ready to paste passwords" + W)
 for i in node_addresses:
 	print (C + "Copying to " + str(i) + W)
 	os.system("ssh-copy-id pi@" + str(i))
-	os.system("scp .ssh/id_rsa pi@" + str(i) + ":~/.ssh/")
+	os.system("scp ~/.ssh/id_rsa pi@" + str(i) + ":~/.ssh/")
 
 hostname = socket.gethostname()
 ip_address = socket.gethostbyname(hostname)
